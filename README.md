@@ -5,6 +5,7 @@
 ### Prerequisites
 * [Node 25+](https://nodejs.org/en)
 * [Go](https://go.dev/)
+* [Docker](https://www.docker.com/)
 
 ### .env
 Create a .env file in the root of the repository based on `.env.example`
