@@ -32,7 +32,7 @@ docker compose -f docker-compose.db.yaml up -d
 cd backend
 go run ./cmd
 ```
-> Pass `-skip-migrations` to skip database migrations on startup.
+> Pass `--skip-migrations` to skip database migrations on startup.
 
 ### Frontend
 1. Move to the frontend directory
