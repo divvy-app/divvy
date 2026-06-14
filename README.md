@@ -14,6 +14,8 @@ Create a .env file in the root of the repository based on `.env.example`
 POSTGRES_USER=                  # Database username
 POSTGRES_PASSWORD=              # Database password
 POSTGRES_DB=                    # Database name
+POSTGRES_HOST=                  # Database host (optional, defaults to localhost)
+POSTGRES_PORT=                  # Database port (optional, defaults to 5432)
 ```
 
 ### Database
