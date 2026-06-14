@@ -1,6 +1,4 @@
 -- +goose Up
-DROP TYPE IF EXISTS users_status;
-
 CREATE TYPE users_status AS ENUM('active', 'disabled');
 
 CREATE TABLE IF NOT EXISTS account (
