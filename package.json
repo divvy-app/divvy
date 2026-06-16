@@ -2,9 +2,9 @@
   "name": "divvy-root",
   "private": true,
   "scripts": {
-    "initialize": "conc \"npm run initialize:backend\" \"npm run initialize:frontend\"",
-    "initialize:backend": "cd ./backend/ && go mod tidy",
-    "initialize:frontend": "cd ./frontend/ && npm install",
+    "init": "conc \"npm run init:backend\" \"npm run init:frontend\"",
+    "init:backend": "cd ./backend/ && go mod tidy",
+    "init:frontend": "cd ./frontend/ && npm install",
     "dev": "conc \"npm run dev:backend\" \"npm run dev:frontend\"",
     "dev:backend": "cd ./backend/ && go run ./cmd",
     "dev:frontend": "cd ./frontend/ && npm run dev"
