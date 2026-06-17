@@ -5,6 +5,7 @@ go 1.26.4
 require (
 	github.com/getkin/kin-openapi v0.140.0
 	github.com/gin-gonic/gin v1.12.0
+	github.com/go-openapi/testify/v2 v2.4.0
 	github.com/jackc/pgx/v5 v5.9.2
 	github.com/joho/godotenv v1.5.1
 	github.com/pressly/goose/v3 v3.27.1

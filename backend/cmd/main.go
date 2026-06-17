@@ -5,6 +5,7 @@ import (
 
 	"divvy/config"
 	"divvy/internal/db"
+	"divvy/internal/server"
 )
 
 func main() {
@@ -25,5 +26,5 @@ func main() {
 	database := db.OpenDB()
 	defer database.Close()
 
-	runServer()
+	server.Run()
 }
