@@ -1,0 +1,29 @@
+name: 'setup backend'
+description: 'checkout, setup Go/Node, install deps, and generate backend code'
+runs:
+  using: 'composite'
+  steps:
+    - uses: actions/checkout@v6
+
+    - uses: actions/setup-go@v6
+      with:
+        go-version-file: backend/go.mod
+
+    - uses: actions/setup-node@v6
+      with:
+        node-version: '25'
+
+    - name: install root dependencies
+      run: npm install
+      shell: bash
+      working-directory: .
+
+    - name: ensure output directories exist
+      run: mkdir -p internal/api
+      shell: bash
+      working-directory: backend
+
+    - name: generate code
+      run: npm run codegen:gen:bundle && npm run codegen:gen:backend
+      shell: bash
+      working-directory: .
