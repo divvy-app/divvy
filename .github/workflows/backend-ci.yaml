@@ -11,7 +11,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  tidy:
+  setup:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -19,7 +19,34 @@ jobs:
 
     steps:
       - uses: actions/checkout@v6
+
       - uses: ./.github/actions/setup-backend
+
+      - name: upload generated code
+        uses: actions/upload-artifact@v4
+        with:
+          name: openapi-gen-go
+          path: backend/internal/api/openapi.gen.go
+
+  tidy:
+    needs: setup
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-go@v6
+        with:
+          go-version-file: backend/go.mod
+
+      - name: download generated code
+        uses: actions/download-artifact@v4
+        with:
+          name: openapi-gen-go
+          path: backend/internal/api/
 
       - name: run go mod tidy
         run: go mod tidy
@@ -33,6 +60,7 @@ jobs:
           fi
 
   test:
+    needs: setup
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -40,7 +68,16 @@ jobs:
 
     steps:
       - uses: actions/checkout@v6
-      - uses: ./.github/actions/setup-backend
+
+      - uses: actions/setup-go@v6
+        with:
+          go-version-file: backend/go.mod
+
+      - name: download generated code
+        uses: actions/download-artifact@v4
+        with:
+          name: openapi-gen-go
+          path: backend/internal/api/
 
       - name: run go test
         run: go test ./...
