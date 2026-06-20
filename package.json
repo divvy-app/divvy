@@ -2,12 +2,16 @@
   "name": "divvy-root",
   "private": true,
   "scripts": {
-    "init": "conc \"npm run init:backend\" \"npm run init:frontend\"",
+    "init": "npm run codegen:fresh && conc \"npm run init:backend\" \"npm run init:frontend\"",
     "init:backend": "cd ./backend/ && go mod tidy",
-    "init:frontend": "cd ./frontend/ && npm install",
+    "init:frontend": "npm install -w frontend",
     "dev": "conc \"npm run dev:backend\" \"npm run dev:frontend\"",
     "dev:backend": "cd ./backend/ && go run ./cmd",
     "dev:frontend": "npm run dev -w frontend",
+    "format": "conc \"npm run format:api\" \"npm run format:frontend\" \"npm run format:backend\"",
+    "format:openapi": "prettier -w ./openapi/",
+    "format:frontend": "npm run format -w frontend",
+    "format:backend": "cd ./backend/ && gofmt -w -s .",
     "codegen": "npm run codegen:gen:bundle && conc \"npm run codegen:gen:backend\" \"npm run codegen:gen:frontend\"",
     "codegen:fresh": "npm run codegen:clean && npm run codegen",
     "codegen:clean": "rm -f openapi/bundled.yaml backend/internal/api/openapi.gen.go && rm -rf frontend/src/api",
@@ -17,7 +21,8 @@
   },
   "devDependencies": {
     "@redocly/cli": "^2.33.2",
-    "concurrently": "^10.0.3"
+    "concurrently": "^10.0.3",
+    "prettier": "^3.8.4"
   },
   "workspaces": ["frontend"]
 }
