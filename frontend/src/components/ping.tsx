@@ -1,5 +1,5 @@
-import { useQuery } from '@tanstack/react-query';
-import { pingOptions } from '@api/@tanstack/react-query.gen';
+import { useQuery } from "@tanstack/react-query";
+import { pingOptions } from "@api/@tanstack/react-query.gen";
 
 /**
  * Minimal component to demonstrate how to consume the auto-generated
@@ -13,4 +13,3 @@ export function PingComponent() {
 
     return <div>Ping API Message: {data?.message}</div>;
 }
-
