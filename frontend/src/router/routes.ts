@@ -1,7 +1,7 @@
 import { createRoute } from "@tanstack/react-router";
 import { rootRoute } from "@router/layouts/RootLayout";
+import { navbarRoute } from "@router/layouts/NavbarLayout";
 import { Home, About, Signup } from "@components/pages";
-import { navbarRoute } from "./layouts/NavbarLayout";
 
 export const indexRoute = createRoute({
     getParentRoute: () => navbarRoute,
