@@ -1,17 +1,12 @@
 import { createRoute } from "@tanstack/react-router";
 import { rootRoute } from "@router/layouts/RootLayout";
 import { navbarRoute } from "@router/layouts/NavbarLayout";
-import { Home, About, Signup } from "@components/pages";
+import { Home, Signup } from "@components/pages";
 
 export const indexRoute = createRoute({
     getParentRoute: () => navbarRoute,
     path: "/",
     component: Home,
-});
-export const aboutRoute = createRoute({
-    getParentRoute: () => navbarRoute,
-    path: "/about",
-    component: About,
 });
 export const signupRoute = createRoute({
     getParentRoute: () => rootRoute,
@@ -19,4 +14,4 @@ export const signupRoute = createRoute({
     component: Signup,
 });
 
-export const routeTree = rootRoute.addChildren([navbarRoute.addChildren([indexRoute, aboutRoute]), signupRoute]);
+export const routeTree = rootRoute.addChildren([navbarRoute.addChildren([indexRoute]), signupRoute]);
