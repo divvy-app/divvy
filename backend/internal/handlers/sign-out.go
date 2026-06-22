@@ -1,8 +1,8 @@
 package handlers
 
 import (
-	"divvy/internal/api"
 	"net/http"
+	"trenchcoat/internal/api"
 
 	"github.com/gin-gonic/gin"
 )

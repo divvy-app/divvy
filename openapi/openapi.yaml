@@ -1,8 +1,8 @@
 openapi: 3.2.0
 info:
-  title: Divvy API
+  title: Trenchcoat API
   version: 1.0.0
-  description: API for Divvy.
+  description: API for Trenchcoat.
 paths:
   /api/v1/ping:
     $ref: "./paths/ping.yaml"

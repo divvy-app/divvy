@@ -3,9 +3,9 @@ package main
 import (
 	"log"
 
-	"divvy/config"
-	"divvy/internal/db"
-	"divvy/internal/server"
+	"trenchcoat/config"
+	"trenchcoat/internal/db"
+	"trenchcoat/internal/server"
 )
 
 func main() {

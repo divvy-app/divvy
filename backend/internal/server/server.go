@@ -1,10 +1,10 @@
 package server
 
 import (
-	"divvy/config"
-	"divvy/internal/api"
-	"divvy/internal/handlers"
 	"log"
+	"trenchcoat/config"
+	"trenchcoat/internal/api"
+	"trenchcoat/internal/handlers"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"

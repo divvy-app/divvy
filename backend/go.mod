@@ -1,4 +1,4 @@
-module divvy
+module trenchcoat
 
 go 1.26.4
 
