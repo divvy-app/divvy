@@ -1,12 +1,12 @@
 package handlers_test
 
 import (
-	"divvy/internal/api"
-	"divvy/internal/server"
 	"encoding/json"
 	"net/http"
 	"net/http/httptest"
 	"testing"
+	"trenchcoat/internal/api"
+	"trenchcoat/internal/server"
 
 	"github.com/gin-gonic/gin"
 	"github.com/go-openapi/testify/v2/assert"

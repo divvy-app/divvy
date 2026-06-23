@@ -1,5 +1,5 @@
 {
-  "name": "divvy-root",
+  "name": "trenchcoat-root",
   "private": true,
   "scripts": {
     "init": "npm run codegen:fresh && conc \"npm run init:backend\" \"npm run init:frontend\"",

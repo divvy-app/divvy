@@ -7,7 +7,7 @@ import (
 
 	"github.com/jackc/pgx/v5/pgxpool"
 
-	"divvy/config"
+	"trenchcoat/config"
 )
 
 func OpenDB() *pgxpool.Pool {
